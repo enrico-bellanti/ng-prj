@@ -1,0 +1,37 @@
+<div class="my_container">
+  <div class="my_row">
+    <div *ngFor="let apartment of apartments" class="my_card" data-toggle="modal" data-target="#exampleModalCenter">
+      <div class="img_card_container">
+        <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
+      </div>
+      <div class="card_body">
+        <h4 class="card_title">{{apartment.title}}</h4>
+        <p class="card_text">{{apartment.description}}</p>
+        <p class="card_text"><small class="text-muted">price per night <strong>€ {{apartment.price}}</strong></small></p>
+      </div>
+      <div class="my_card_layover"></div>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">{{apartment.title}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
+              <p class="modal_text">{{apartment.description}}</p>
+              <h6>Extras</h6>
+              <ul class="modal_extras_list">
+                <li><i class="fas fa-door-open"></i> {{apartment.rooms_number}}</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
