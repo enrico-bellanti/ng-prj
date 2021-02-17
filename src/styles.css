@@ -2,3 +2,59 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* common */
+.container{
+    padding-top: 50px;
+}
+.my_container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* palette */
+.defaul-color{
+    color: #7373EE;
+}
+.defaul-color:hover{
+    color: #6767D5;
+}
+
+
+
+/* button */
+.btn_primary{
+    background-color: #7373EE;
+    border: #6767D5;
+    transition: 0.2s;
+}
+.btn_primary:hover{
+    background-color: #6767D5;
+}
+.btn_primary:disabled{
+    background-color: #7B7BFF;
+}
+
+.btn_outline_primary{
+    color: #6767D5;
+    border: 1px solid #6767D5;
+    transition: 0.2s;
+}
+.btn_outline_primary:hover{
+    color: #fff;
+    background-color: #6767D5;
+    border: 1px solid #6767D5;
+}
+
+/* title page */
+.title_page_container{
+    width: 100%;
+}
+
+.title_page{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    color: #7373EE;
+}

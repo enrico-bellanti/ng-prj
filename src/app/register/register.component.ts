@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomValidators } from '../classe/custom-validators';
-import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { UserService } from '../services/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  user: User;
+  // user: User;
   userForm: FormGroup;
 
   static isValidEmail(control: FormControl): any {
@@ -43,10 +42,22 @@ export class RegisterComponent implements OnInit {
   createUser(): void {
     this.userService.addUser(this.userForm.value)
       .subscribe(response => {
-        this.user = response;
-        console.log(this.user);
-        localStorage.setItem('token', response.token)
-        this.router.navigate(['']); } ); 
+        let user = {
+          "email": this.userForm.value.email,
+          "password": this.userForm.value.password
+        };
+        this.userService.logUser(user)
+        .subscribe(
+          response => {
+            localStorage.setItem('token', response.token) 
+            localStorage.setItem('user', response.user.name) 
+            this.router.navigate(['admin/apartments']) 
+          },
+          error => {
+            console.log('User name o password incorretti', error);
+          }
+        ); 
+      }); 
   }
 
 }

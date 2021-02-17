@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
     this.userService.logUser(this.user)
       .subscribe(
         response => {
-          console.log(response)
           localStorage.setItem('token', response.token) 
-          this.router.navigate(['admin']) 
+          localStorage.setItem('user', response.user.name) 
+          this.router.navigate(['admin/apartments']) 
         },
         error => {
           console.log('User name o password incorretti', error);

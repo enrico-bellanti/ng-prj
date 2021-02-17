@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +9,18 @@ export class AuthLogService {
 
   constructor() { }
 
-  onUserLog(){
+  logStatus = new Observable((status) => {
     let token = localStorage.getItem('token');
-    if (!!token && token.length > 0) {
-      return true;
+  
+    // Simple geolocation API check provides values to publish
+    if (!!token) {
+      status.next(true);
+    } else {
+      status.next(false);
     }
-    return false;
-  }
+
+  });
+
+
+
 }

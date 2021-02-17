@@ -1,15 +1,12 @@
 <div class="container">
-  <div class="col-md-12">
-    <div>
-      <a [routerLink]="['/home']" class="btn btn-light">Back</a>
-    </div>
+  <div class="col-md-12 text-center mt-lg-auto">
+    <h1 class="title_page">Register new User</h1>
   </div>
-
   <div class="col-md-12">
     <div class="card card-body bg-light">
       <form novalidate class="form-horizontal" (ngSubmit)="createUser()" [formGroup]="userForm">
         <fieldset>
-          <legend>Register User Form</legend>
+          <!-- <legend>Register new User</legend> -->
           <div class="form-group">
             <label for="email" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
@@ -37,8 +34,8 @@
 
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <a [routerLink]="['/home']" class="btn btn-light"> Cancel</a>
-              <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Create</button>
+              <a [routerLink]="['/home']" class="btn btn-light btn-sm"> Cancel</a>
+              <button type="submit" class="btn btn-primary btn-sm btn_primary" [disabled]="userForm.invalid">Create</button>
             </div>
           </div>
         </fieldset>

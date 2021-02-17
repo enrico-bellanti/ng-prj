@@ -17,7 +17,6 @@ export class IndexComponent implements OnInit {
     getApartments(): any {
       return this.adminApartmentsService.getAllApartments()
         .subscribe(res => {
-          console.log(res);
           this.apartments = res;
         });
     }

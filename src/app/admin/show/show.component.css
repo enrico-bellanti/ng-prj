@@ -1,0 +1,11 @@
+.card{
+    text-align: left;
+}
+
+.card_title{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.card_body{
+    padding: 7px;
+}

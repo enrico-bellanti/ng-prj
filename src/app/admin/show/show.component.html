@@ -1,23 +1,32 @@
-<div class="container">
+<div class="container my_container">
     <div class="row">
-      <div class="col-md-12 text-center mt-lg-auto">
-        <h2>Your Apartment</h2>
+      <div class="col-md-12 mt-lg-auto">
+        <h1 class="title_page">Your Apartments</h1>
       </div>
       <div class="col-md-12 text-center mt-lg-auto">
         <div class="row">
-          <div class="card col-md-6 m-auto">
+          <div class="card col-md-6">
             <img class="card-img mt-3" src="{{ apartment.img }}" alt="{{apartment.title}}">
-            <div class="card-body">
-              <h5 class="card-title">{{ apartment.title }}</h5>
-              <p class="card-text">{{ apartment.description }}</p>
+            <div class="card-body card_body">
+              <h3 class="card-title card_title">{{ apartment.title }}</h3>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Rooms: {{ apartment.rooms_number }}</li>
+              <li class="list-group-item">
+                <h4><strong>Description:</strong></h4>
+                <p class="card-text">{{ apartment.description }}</p>
+              </li>
+              <li class="list-group-item">
+                <h4><strong>Features:</strong></h4>
+                <p class="card-text"><i class="fas fa-home gradient"></i><small> Rooms: {{ apartment.rooms_number }}</small></p>
+                <p class="card-text"><i class="fas fa-bed gradient"></i><small> Beds: 1</small></p>
+                <p class="card-text"><i class="fas fa-shower gradient"></i><small> Bathrooms: 2</small></p>
+                <p class="card-text"><i class="fas fa-th gradient"></i><small> Meter square: 50m</small></p>
+              </li>
               <li class="list-group-item"><strong>Price: € {{apartment.price}}</strong></li>
             </ul>
             <div class="card-body">
-              <button type="button" [routerLink]="['update/', apartment.id]" class="btn btn-primary mx-2">Edit</button>
-              <button type="button" (click)="deleteApartment(apartment.id)" class="btn btn-danger mx-2">Delete</button>
+              <button type="button" [routerLink]="['update/', apartment.id]" class="btn btn-outline-primary btn_outline_primary btn-sm mx-2"><i class="fas fa-edit"></i></button>
+              <button type="button" (click)="deleteApartment(apartment.id)" class="btn btn-outline-danger btn-sm mx-2"><i class="fas fa-trash-alt"></i></button>
             </div>
           </div>
         </div>

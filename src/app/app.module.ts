@@ -18,6 +18,9 @@ import { CreateComponent } from './admin/create/create.component';
 import { UpdateComponent } from './admin/update/update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './shared/modal/modal.component';
+import { DropdownDirective } from './shared/dropdown/dropdown.directive';
+import { AuthLogService } from './auth/auth-log.service';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { ModalComponent } from './shared/modal/modal.component';
     ShowComponent,
     CreateComponent,
     UpdateComponent,
-    ModalComponent
+    ModalComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { ModalComponent } from './shared/modal/modal.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ClickOutsideModule
   ],
   providers: [
     AuthGuardService,
@@ -47,7 +52,8 @@ import { ModalComponent } from './shared/modal/modal.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    AuthLogService
   ],
   bootstrap: [AppComponent]
 })

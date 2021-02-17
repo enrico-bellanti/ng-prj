@@ -1,32 +1,57 @@
-import { Component } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthLogService } from '../auth/auth-log.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-  isLoggedIn:boolean = false;
+export class HeaderComponent implements DoCheck  {
+  isLogged = false;
+  isOpen = false;
+  accountName = 'Account';
+  user: User;
 
-  constructor(private logControl: AuthLogService, private router: Router) { 
-    router.events.forEach((event) => {
-      if (event instanceof NavigationStart) {
-        if (this.logControl.onUserLog()) {
-          this.isLoggedIn = true;
-        } else {
-          this.isLoggedIn = false;
-        }
-      }
-    });
-  }
+  constructor(private router: Router, private authLogService: AuthLogService) { }
 
 
   getOutSession(){
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.isLogged = false;
     this.router.navigate([''])
   }
+
+  toggleDropdown(){
+    this.isOpen = !this.isOpen;
+  }
+
+  closeDropdown(){
+    this.isOpen = false;
+  }
+
+  setLog(value){
+    this.isLogged = value;
+    let user = localStorage.getItem('user');
+    
+    if (value == true) {
+      this.accountName = user;
+    } else {
+      this.accountName = 'Account'
+    }
+  }
+
+  ngDoCheck(){
+    this.authLogService.logStatus.subscribe( 
+      value => {
+        this.setLog(value);
+      })
+  }
+
+  
+
 
 
 }

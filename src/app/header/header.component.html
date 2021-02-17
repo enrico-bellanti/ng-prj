@@ -1,26 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a routerLink="" class="navbar-brand"><img class="img_logo" src="assets/img/logo.png" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Member
-            </a>
-            <div *ngIf="!isLoggedIn" class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/register">Register</a>
-              <a class="dropdown-item" routerLink="/login">Login</a>
-            </div>
-            <div *ngIf="isLoggedIn" class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/admin/apartments">Your Apartments</a>
-              <a class="dropdown-item" routerLink="admin/apartments/create">Add New Apartment</a>
-              <a class="dropdown-item" href="#" (click)="getOutSession()">Log Out</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+<nav class="header">
+  <nav class="header_nav_container">
+    <div class="header_logo_container">
+      <a routerLink=""><img class="img_logo" src="assets/img/logo.png" alt="logo"></a>
     </div>
+    <ul class="navbar_right">
+      <li class="dropdown_container">
+        <a class="dropdown_toggle" 
+        (click)="toggleDropdown()"
+        (clickOutside)="closeDropdown()"  
+        role="button"><strong class="defaul-color account_name">{{accountName}}</strong></a>
+        <ul class="dropdown_menu" [ngClass]="{'show' : isOpen === true}">
+          <a *ngIf="!isLogged" routerLink="/login">Login</a>
+          <a *ngIf="!isLogged" routerLink="/register">Register</a>
+          <a *ngIf="isLogged" routerLink="/admin/apartments/create">Add Apartments</a>
+          <a *ngIf="isLogged" routerLink="/admin/apartments">My Apartments</a>
+          <a *ngIf="isLogged" (click)="getOutSession()" role="button">Logout</a>
+        </ul>
+      </li>
+    </ul>
   </nav>
+</nav>

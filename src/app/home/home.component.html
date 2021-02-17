@@ -1,16 +1,18 @@
 <div class="my_container">
     <div class="my_row">
-      <div *ngFor="let apartment of apartments" (click)="onSelect(apartment.id)" class="my_card" data-toggle="modal" data-target="#exampleModalCenter">
-        <div class="img_card_container">
-          <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
+      <div *ngFor="let apartment of apartments" class="my_card">
+        <div class="card_container" (click)="onSelect(apartment.id)">
+          <div class="img_card_container">
+            <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
+          </div>
+          <div class="card_body">
+            <h4 class="card_title">{{apartment.title}}</h4>
+            <p class="card_text card_description">{{apartment.description}}</p>
+            <p class="card_text card_text_price"><small class="text-muted">price per night <strong>€ {{apartment.price}}</strong></small></p>
+          </div>
+          <div class="my_card_layover"></div>
         </div>
-        <div class="card_body">
-          <h4 class="card_title">{{apartment.title}}</h4>
-          <p class="card_text">{{apartment.description}}</p>
-          <p class="card_text"><small class="text-muted">price per night <strong>€ {{apartment.price}}</strong></small></p>
-        </div>
-        <div class="my_card_layover"></div>
-        <app-modal [infoApartment]="apartment" *ngIf="selectedApartment === apartment.id"></app-modal>
+        <app-modal (close)="onSelect(null)" [infoApartment]="apartment" *ngIf="selectedApartment === apartment.id"></app-modal>
       </div>
     </div>
 </div>

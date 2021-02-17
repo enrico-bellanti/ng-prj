@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Apartment } from "src/app/models/apartment";
 
 @Component({
@@ -8,4 +8,9 @@ import { Apartment } from "src/app/models/apartment";
 })
 export class ModalComponent {
     @Input() infoApartment: Apartment;
+    @Output() close = new EventEmitter<void>();
+
+    onClose(){
+        this.close.emit();
+    }
 }
