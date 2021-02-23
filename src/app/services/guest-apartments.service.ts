@@ -11,7 +11,7 @@ export class GuestApartmentsService {
 
   constructor(private http: HttpClient) { }
   // VISUALIZZARE TUTTI GLI APPARTAMENTI 
-  getAllApartments(): Observable<Apartment> {
-      return this.http.get<Apartment>(API);
+  getAllApartments(): Observable<Apartment[]> {
+      return this.http.get<Apartment[]>(API);
   }
 }

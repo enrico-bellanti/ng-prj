@@ -15,7 +15,6 @@ export class ShowComponent implements OnInit {
   getMyApartment(): any {
     return this.adminApartmentsService.getSingleApartment(this.route.snapshot.params['id'])
       .subscribe(res => {
-        console.log(res);
         this.apartment = res[0];
       });
   }

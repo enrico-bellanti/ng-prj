@@ -21,6 +21,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { DropdownDirective } from './shared/dropdown/dropdown.directive';
 import { AuthLogService } from './auth/auth-log.service';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { FiltersListComponent } from './shared/filters-list/filters-list.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
     CreateComponent,
     UpdateComponent,
     ModalComponent,
-    DropdownDirective
+    DropdownDirective,
+    FiltersListComponent
   ],
   imports: [
     BrowserModule,

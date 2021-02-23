@@ -1,6 +1,6 @@
 <div class="my_container">
     <div class="my_row">
-      <div *ngFor="let apartment of apartments" class="my_card">
+      <div *ngFor="let apartment of filteredApartment$ | async" class="my_card">
         <div class="card_container" (click)="onSelect(apartment.id)">
           <div class="img_card_container">
             <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">

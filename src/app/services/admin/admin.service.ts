@@ -31,7 +31,6 @@ export class AdminService {
   }  
 
   update(new_data: Apartment, id: number): Observable<Apartment> {
-    console.log(new_data);
     return this.http.put<Apartment>(API + id, JSON.stringify(new_data), this.httpOptions)
   }  
 

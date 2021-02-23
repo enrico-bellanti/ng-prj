@@ -1,5 +1,10 @@
-<div class="container">
-    <h1 class="text-center">Update your Apartment</h1>
+<div class="container my_container">
+    <div class="title_page_container">
+        <h1 class="title_page" 
+            style="margin: auto;
+            width: 100%;
+            margin-bottom: 20px;">Update your Apartment</h1>
+    </div>
   
     <form [formGroup]="form" (ngSubmit)="submit()">
   
@@ -68,6 +73,6 @@
             </div>
         </div>
   
-        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+        <button class="btn btn-primary btn_primary" type="submit" [disabled]="!form.valid">Update</button>
     </form>
   </div>

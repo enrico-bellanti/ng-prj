@@ -4,11 +4,12 @@
       <a routerLink=""><img class="img_logo" src="assets/img/logo.png" alt="logo"></a>
     </div>
     <ul class="navbar_right">
-      <li class="dropdown_container">
+      <app-filters-list></app-filters-list>
+      <li class="dropdown_container" style="margin-left: 35px;">
         <a class="dropdown_toggle" 
         (click)="toggleDropdown()"
         (clickOutside)="closeDropdown()"  
-        role="button"><strong class="defaul-color account_name">{{accountName}}</strong></a>
+        role="button"><strong class="defaul-color account_name">{{accountName}} <i class="fas fa-angle-down"></i></strong></a>
         <ul class="dropdown_menu" [ngClass]="{'show' : isOpen === true}">
           <a *ngIf="!isLogged" routerLink="/login">Login</a>
           <a *ngIf="!isLogged" routerLink="/register">Register</a>

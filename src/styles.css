@@ -5,13 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 /* common */
-.container{
-    padding-top: 50px;
-}
-.my_container{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
+
 
 /* palette */
 .defaul-color{

@@ -1,0 +1,29 @@
+<li class="dropdown_container header_list" (clickOutside)="closeDropdown()">
+  <form (ngSubmit)="checkForm()" [formGroup]="userForm">
+    <a 
+        class="dropdown_toggle defaul-color"
+        (click)="toggleDropdown()"
+        >Search-filters <i class="fas fa-angle-down arrow_down"></i></a>
+    <ul class="dropdown_menu filter_list" [ngClass]="{'show' : isOpen === true}">
+      <li class="filter_item">
+        <label for="rooms_number" style="margin: 0;">Rooms:</label>
+        <input formControlName="rooms_number" type="number" id="rooms_number" min="1" name="rooms_number">
+      </li>
+      <li class="filter_item">
+        <label for="beds" style="margin: 0;">Beds:</label>
+        <input formControlName="beds" type="number" id="beds" min="1" name="beds">
+      </li>
+      <li class="filter_item">
+        <label for="bathrooms" style="margin: 0;">Bathrooms:</label>
+        <input formControlName="bathrooms" type="number" id="bathrooms" min="1" name="bathrooms">
+      </li>
+      <li class="filter_item">
+        <label for="square_meters" style="margin: 0;">Square meters:</label>
+        <input formControlName="square_meters"  type="number" id="square_meters" min="30" name="square_meters">
+      </li>
+      <li style="justify-content: flex-end;">
+        <button type="submit" class="btn btn-primary btn_primary btn-sm">Search</button>
+      </li>
+    </ul>
+  </form>
+</li>

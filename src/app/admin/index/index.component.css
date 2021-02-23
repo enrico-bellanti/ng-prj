@@ -6,8 +6,10 @@
 
 .my_container{
     width: 100%;
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
+
 
 .my_row{
     display: flex;
