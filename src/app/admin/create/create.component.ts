@@ -31,8 +31,7 @@ export class CreateComponent implements OnInit {
   }
     
   submit(){
-    console.log(this.form.value);
-    this.adminApartmentsService.create(this.form.value).subscribe(res => {
+    this.adminApartmentsService.create(this.form.value).subscribe(() => {
          this.router.navigateByUrl('admin/apartments');
     })
   }

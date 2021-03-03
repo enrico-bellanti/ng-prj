@@ -1,17 +1,17 @@
 <div class="modal_backdrop" (click)="onClose()"></div>
 <div class="card my_modal">
-    <img class="card-img-top" src="{{ infoApartment.img }}" alt="Card image cap">
-    <div class="card-body">
-      <h2 class="card-title"><strong>{{ infoApartment.title }}</strong></h2>
-      <p class="card-text">{{ infoApartment.description }}</p>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><i class="fas fa-home gradient"></i><small> Rooms: {{ infoApartment.rooms_number }}</small></li>
-        <li class="list-group-item"><i class="fas fa-bed gradient"></i><small> Beds: 1</small></li>
-        <li class="list-group-item"><i class="fas fa-shower gradient"></i><small> Bathrooms: 2</small></li>
-        <li class="list-group-item"><i class="fas fa-th gradient"></i><small> Meter square: 50m</small></li>
-      </ul>
-    </div>
-    <div class="card_footer">
-        <button (click)="onClose()" class="btn btn-outline-secondary btn-sm">Close</button>
-    </div>
+  <img class="card-img-top" src="{{ infoApartment.img }}" alt="Card image cap">
+  <div class="card-body">
+    <h2 class="card-title"><strong>{{ infoApartment.title }}</strong></h2>
+    <p class="card-text">{{ infoApartment.description }}</p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><i class="fas fa-home gradient"></i><small> Rooms: {{ infoApartment.rooms_number }}</small></li>
+      <li class="list-group-item"><i class="fas fa-bed gradient"></i><small> Beds: 1</small></li>
+      <li class="list-group-item"><i class="fas fa-shower gradient"></i><small> Bathrooms: 2</small></li>
+      <li class="list-group-item"><i class="fas fa-th gradient"></i><small> Meter square: 50m</small></li>
+    </ul>
   </div>
+  <div class="card_footer">
+      <button (click)="onClose()" class="btn btn-outline-secondary btn-sm">Close</button>
+  </div>
+</div>

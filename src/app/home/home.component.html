@@ -2,7 +2,7 @@
     <div class="my_row">
       <div *ngFor="let apartment of filteredApartment$ | async" class="my_card">
         <div class="card_container" (click)="onSelect(apartment.id)">
-          <div class="img_card_container">
+          <div class="img_card_container" style="max-height: 180px;">
             <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
           </div>
           <div class="card_body">

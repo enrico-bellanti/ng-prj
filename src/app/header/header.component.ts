@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthLogService } from '../auth/auth-log.service';
 import { User } from '../models/user';
