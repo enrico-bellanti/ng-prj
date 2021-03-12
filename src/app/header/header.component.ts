@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthLogService } from '../auth/auth-log.service';
 import { User } from '../models/user';
@@ -13,6 +13,11 @@ export class HeaderComponent implements DoCheck  {
   isOpen = false;
   accountName = 'Account';
   user: User;
+
+  @Output() navToggle = new EventEmitter<boolean>();
+  navOpen() {
+    this.navToggle.emit(true);
+  }
 
   constructor(private router: Router, private authLogService: AuthLogService) { }
 
@@ -50,7 +55,7 @@ export class HeaderComponent implements DoCheck  {
       })
   }
 
-  
+   
 
 
 

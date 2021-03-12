@@ -1,2 +1,18 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header (navToggle)="mainNav.toggle()"></app-header>
+<mat-sidenav-container>
+    <mat-sidenav #mainNav>
+        <mat-nav-list>
+            <!-- <a mat-list-item href="#">Login</a>
+            <a mat-list-item href="#">Register</a> -->
+            <button mat-menu-item *ngIf="!isLogged" (click)="mainNav.toggle()" routerLink="/login">Login</button>
+            <button mat-menu-item *ngIf="!isLogged" (click)="mainNav.toggle()" routerLink="/register">Register</button>
+            <button mat-menu-item *ngIf="isLogged" (click)="mainNav.toggle()" routerLink="/admin/apartments/create">Add Apartments</button>
+            <button mat-menu-item *ngIf="isLogged" (click)="mainNav.toggle()" routerLink="/admin/apartments">My Apartments</button>
+            <button mat-menu-item *ngIf="isLogged" (click)="mainNav.toggle()" (click)="getOutSession()" role="button">Logout</button>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

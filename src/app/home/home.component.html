@@ -1,7 +1,11 @@
-<div class="my_container">
-    <div class="my_row">
-      <div *ngFor="let apartment of filteredApartment$ | async" class="my_card">
-        <div class="card_container" (click)="onSelect(apartment.id)">
+<!-- <div class="my_container">
+  <div class="my_row">
+    <mat-grid-list 
+      cols="4" 
+      gutterSize="10px"
+    >
+      <mat-grid-tile *ngFor="let apartment of filteredApartment$ | async">
+        <div class="my_card card_container" (click)="openDialog(apartment)">
           <div class="img_card_container" style="max-height: 180px;">
             <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
           </div>
@@ -12,7 +16,35 @@
           </div>
           <div class="my_card_layover"></div>
         </div>
-        <app-modal (close)="onSelect(null)" [infoApartment]="apartment" *ngIf="selectedApartment === apartment.id"></app-modal>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div> -->
+
+
+<div class="my_container">
+  <div class="my_row">
+    <div class="cards_container" fxLayout="row wrap" fxLayoutGap="25px">
+      <div 
+        class="card" 
+        *ngFor="let apartment of filteredApartment$ | async" 
+        fxFlex="calc(25% - 25px)" 
+        fxFlex.md="calc(100% / 3 - 25px)" 
+        fxFlex.sm="calc(50% - 25px)" 
+        fxFlex.xs="calc(100% - 25px)">
+        <div class="my_card card_container" (click)="openDialog(apartment)">
+          <div class="img_card_container" style="max-height: 180px;">
+            <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
+          </div>
+          <div class="card_body">
+            <h4 class="card_title">{{apartment.title}}</h4>
+            <p class="card_text card_description">{{apartment.description}}</p>
+            <p class="card_text card_text_price"><small class="text-muted">price per night <strong>€ {{apartment.price}}</strong></small></p>
+          </div>
+          <div class="my_card_layover"></div>
+        </div>
       </div>
     </div>
+  </div>
 </div>
+

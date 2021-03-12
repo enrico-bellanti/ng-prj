@@ -1,17 +1,40 @@
-<div class="modal_backdrop" (click)="onClose()"></div>
-<div class="card my_modal">
-  <img class="card-img-top" src="{{ infoApartment.img }}" alt="Card image cap">
-  <div class="card-body">
-    <h2 class="card-title"><strong>{{ infoApartment.title }}</strong></h2>
-    <p class="card-text">{{ infoApartment.description }}</p>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><i class="fas fa-home gradient"></i><small> Rooms: {{ infoApartment.rooms_number }}</small></li>
-      <li class="list-group-item"><i class="fas fa-bed gradient"></i><small> Beds: 1</small></li>
-      <li class="list-group-item"><i class="fas fa-shower gradient"></i><small> Bathrooms: 2</small></li>
-      <li class="list-group-item"><i class="fas fa-th gradient"></i><small> Meter square: 50m</small></li>
-    </ul>
+<mat-card class="example-card">
+  <mat-card-header>
+    <img src="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/3_avatar-512.png" mat-card-avatar class="example-header-image">
+    <mat-card-title>{{ data.title }}</mat-card-title>
+    <mat-card-subtitle>flat</mat-card-subtitle>
+  </mat-card-header>
+  <div class="card_content" fxLayout="row">
+    <img mat-card-image src="{{ data.img }}" alt="Photo of a Shiba Inu" fxFlex="50">
+    <span fxFlex="10"></span>
+    <mat-card-content fxFlex="40">
+      <strong>Description</strong>
+      <p>{{ data.description }}</p>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListIcon>door_back</mat-icon>
+          <p matLine> <small>Rooms: {{ data.rooms_number }}</small></p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListIcon>bed</mat-icon>
+          <p matLine> <small>Beds: 1</small></p>
+        </mat-list-item>  
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListIcon>shower</mat-icon>
+          <p matLine> <small>Bathrooms: 1</small></p>
+        </mat-list-item>  
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListIcon>grid_on</mat-icon>
+          <p matLine> <small>Meter square: 1</small></p>
+        </mat-list-item>  
+    </mat-list>
+    </mat-card-content>
   </div>
-  <div class="card_footer">
-      <button (click)="onClose()" class="btn btn-outline-secondary btn-sm">Close</button>
-  </div>
-</div>
+  <mat-card-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-card-actions>
+</mat-card>

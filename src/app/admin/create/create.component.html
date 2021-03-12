@@ -9,65 +9,55 @@
   <form [formGroup]="form" (ngSubmit)="submit()">
 
       <div class="form-group">
-          <label for="title">Title</label>
-          <input 
-              formControlName="title"
-              id="title" 
-              type="text" 
-              class="form-control">
-          <div *ngIf="f.title.touched && f.title.invalid" class="alert alert-danger">
-              <div *ngIf="f.title.errors.required">Title is required.</div>
-          </div>
+        <mat-form-field appearance="legacy" class="form_field">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" type="text">
+        </mat-form-field>
+            <div *ngIf="f.title.touched && f.title.invalid" class="alert alert-danger">
+            <div *ngIf="f.title.errors.required">Title is required.</div>
+            </div>
       </div>
 
       <div class="form-group">
-          <label for="description">Description</label>
-          <input 
-              formControlName="description"
-              id="description" 
-              type="text" 
-              class="form-control">
-          <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
-              <div *ngIf="f.description.errors.required">Description is required.</div>
-          </div>
+        <mat-form-field appearance="legacy" class="form_field">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" type="text">
+        </mat-form-field>
+        <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+            <div *ngIf="f.description.errors.required">Description is required.</div>
+        </div>
       </div>
 
       <div class="form-group">
-          <label for="rooms_number">Rooms number</label>
-          <input 
-              formControlName="rooms_number"
-              id="rooms_number" 
-              type="text" 
-              class="form-control">
-          <div *ngIf="f.rooms_number.touched && f.rooms_number.invalid" class="alert alert-danger">
-              <div *ngIf="f.rooms_number.errors.required">Rooms number is required.</div>
-          </div>
+            <mat-form-field appearance="legacy" class="form_field">
+                <mat-label>Rooms number</mat-label>
+                <input matInput formControlName="rooms_number" type="text">
+            </mat-form-field>
+            <div *ngIf="f.rooms_number.touched && f.rooms_number.invalid" class="alert alert-danger">
+                <div *ngIf="f.rooms_number.errors.required">Rooms number is required.</div>
+            </div>
       </div>
 
       <div class="form-group">
-          <label for="price">Price</label>
-          <input 
-              formControlName="price"
-              id="price" 
-              type="text" 
-              class="form-control">
-          <div *ngIf="f.price.touched && f.price.invalid" class="alert alert-danger">
-              <div *ngIf="f.price.errors.required">Price is required.</div>
-          </div>
+            <mat-form-field appearance="legacy" class="form_field">
+                <mat-label>Price</mat-label>
+                <input matInput formControlName="price" type="text">
+            </mat-form-field>
+            <div *ngIf="f.price.touched && f.price.invalid" class="alert alert-danger">
+                <div *ngIf="f.price.errors.required">Price is required.</div>
+            </div>
       </div>
 
       <div class="form-group">
-          <label for="img">Image</label>
-          <input 
-              formControlName="img"
-              id="img" 
-              type="text" 
-              class="form-control">
-          <div *ngIf="f.img.touched && f.img.invalid" class="alert alert-danger">
-              <div *ngIf="f.img.errors.required">Image is required.</div>
-          </div>
+            <mat-form-field appearance="legacy" class="form_field">
+                <mat-label>Image</mat-label>
+                <input matInput formControlName="img" type="text">
+            </mat-form-field>
+            <div *ngIf="f.img.touched && f.img.invalid" class="alert alert-danger">
+                <div *ngIf="f.img.errors.required">Image is required.</div>
+            </div>
       </div>
 
-      <button class="btn btn-primary btn_primary" type="submit" [disabled]="!form.valid">Add Apartment</button>
+      <button color="primary" mat-raised-button type="submit" [disabled]="!form.valid">Add Apartment</button>
   </form>
 </div>

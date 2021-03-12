@@ -3,28 +3,32 @@
       <div class="alert alert-danger">Username or Password incorrect</div>
     </div>
     <div class="title_page_container col-md-12 mt-lg-auto">
-      <h1 class="title_page">User Log in</h1>
+      <h1 class="title_page">User Log In</h1>
     </div>
     <div class="col-md-12">
       <div class="card card-body bg-light">
         <form novalidate class="form-horizontal" (ngSubmit)="logInUser()">
           <fieldset>
             <div class="form-group">
-              <label for="email" class="col-lg-2 control-label">Email</label>
               <div class="col-lg-10">
-                <input (input)="onInputEmail($event)" type="email" class="form-control" id="email" name="email" placeholder="Insert email">              
-            </div>
+                <mat-form-field appearance="legacy">
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" (input)="onInputEmail($event)">
+                </mat-form-field>
+              </div>
             </div>
             <div class="form-group">
-              <label for="password" class="col-lg-2 control-label">Password</label>
               <div class="col-lg-10">
-                <input (input)="onInputPassword($event)" type="password" class="form-control" id="password" name="password" placeholder="Password">              
-            </div>
+                <mat-form-field appearance="legacy">
+                  <mat-label>Password</mat-label>
+                  <input matInput (input)="onInputPassword($event)" type="password">
+                </mat-form-field>
+              </div>
             </div>
             <div class="form-group">
               <div class="col-lg-10 col-lg-offset-2">
-                <a [routerLink]="['/home']" class="btn btn-light btn-sm">Cancel</a>
-                <button type="submit" class="btn btn-primary btn-sm btn_primary">Login</button>
+                <button [routerLink]="['/home']" color="primary" mat-button>Cancel</button>
+                <button (click)="logInUser()" color="primary" mat-raised-button>Login</button>
               </div>
             </div>
           </fieldset>

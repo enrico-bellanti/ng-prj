@@ -11,15 +11,13 @@
 }
 
 .my_row{
-    display: flex;
     width: 80%;
     margin: auto;
-    flex-wrap: wrap;
 }
 .my_card{
-    position: relative;
-    width: calc((100% / 4) - 40px);
-    height: 300px;
+    /* position: relative; */
+    /* width: calc((100% / 4) - 40px);
+    height: 300px; */
     border-radius: 5px;
     text-align: center;
     margin: 20px;
@@ -76,29 +74,8 @@
     border-radius: 5px;
     transition: 0.5s;
 }
-/* 
-.modal-body{
-    text-align: left;
+
+.card{
+    margin-bottom: 25px;
 }
 
-
-.modal-dialog {
-    width: 100%;
-    margin: auto;
-}
-
-.modal-content{
-    padding: 10px;
-}
-
-.modal_text{
-    padding: 10px 0;
-}
-
-.modal-header{
-    border: none;
-}
-
-.modal_extras_list{
-    list-style: none;
-} */

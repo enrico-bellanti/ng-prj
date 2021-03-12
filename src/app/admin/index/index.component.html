@@ -1,4 +1,4 @@
-<div class="my_container">
+<!-- <div class="my_container">
   <div class="title_page_container">
     <h1 class="title_page" style="margin: auto;">Your Apartments</h1>
   </div>
@@ -12,5 +12,29 @@
         <a [routerLink]="['/admin/apartments/show/', apartment.id]" class="card_info_link">see more details</a>
       </div>
     </div>
+  </div>
+</div> -->
+
+
+<div class="my_container">
+  <div class="title_page_container">
+    <h1 class="title_page" style="margin: auto;">Your Apartments</h1>
+  </div>
+  <div class="my_row">
+    <mat-grid-list 
+    [cols]="cols" 
+    rowHeight="200px" 
+    gutterSize="10px"
+    >
+      <mat-grid-tile *ngFor="let apartment of apartments" class="my_card">
+        <div class="img_card_container">
+          <img class="img_card" src="{{apartment.img}}" alt="{{apartment.title}}">
+        </div>
+        <div class="my_card_layover">
+          <h4 class="card_title">{{apartment.title}}</h4>
+          <a [routerLink]="['/admin/apartments/show/', apartment.id]" class="card_info_link">see more details</a>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
 </div>

@@ -1,10 +1,13 @@
 <li class="dropdown_container header_list" (clickOutside)="closeDropdown()">
   <form (ngSubmit)="checkForm()" [formGroup]="userForm">
     <a 
-        class="dropdown_toggle defaul-color"
-        (click)="toggleDropdown()"
-        >Search-filters <i class="fas fa-angle-down arrow_down"></i>
+      mat-flat-button
+      class="dropdown_toggle defaul-color"
+      role="button"
+      (click)="toggleDropdown()"
+      >Search-filters <i class="fas fa-angle-down arrow_down"></i>
     </a>
+
     <ul class="dropdown_menu filter_list" [ngClass]="{'show' : isOpen === true}">
       <li class="filter_item">
         <label for="rooms_number" style="margin: 0;">Rooms:</label>

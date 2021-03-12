@@ -21,7 +21,7 @@ import { DropdownDirective } from './shared/dropdown/dropdown.directive';
 import { AuthLogService } from './auth/auth-log.service';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { FiltersListComponent } from './shared/filters-list/filters-list.component';
-
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { FiltersListComponent } from './shared/filters-list/filters-list.compone
     DropdownDirective,
     FiltersListComponent
   ],
+  entryComponents: [ModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,7 +46,8 @@ import { FiltersListComponent } from './shared/filters-list/filters-list.compone
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    MaterialModule
   ],
   providers: [
     AuthGuardService,

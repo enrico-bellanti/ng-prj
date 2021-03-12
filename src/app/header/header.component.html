@@ -1,23 +1,38 @@
-<nav class="header">
+<mat-toolbar color="primary" class="navbar">
   <nav class="header_nav_container">
     <div class="header_logo_container">
       <a routerLink=""><img class="img_logo" src="assets/img/logo.png" alt="logo"></a>
     </div>
     <ul class="navbar_right">
-      <app-filters-list></app-filters-list>
-      <li class="dropdown_container" style="margin-left: 35px;">
+      <li [fxHide]="true" [fxShow.sm]="true" [fxShow.xs]="true">
+        <a
+          mat-flat-button
+          role="button"
+          class="ham-icon-container"
+          (click)="navOpen()"
+        >
+          <mat-icon class="hamburger_icon" color="primary">menu</mat-icon>
+        </a>
+      </li>
+      <li [fxHide.xs]="true" [fxHide.sm]="true">
+        <app-filters-list></app-filters-list>
+      </li>
+      <li [fxHide.xs]="true" [fxHide.sm]="true">
         <a class="dropdown_toggle" 
-        (click)="toggleDropdown()"
-        (clickOutside)="closeDropdown()"  
-        role="button"><strong class="defaul-color account_name">{{accountName}} <i class="fas fa-angle-down"></i></strong></a>
-        <ul class="dropdown_menu" [ngClass]="{'show' : isOpen === true}">
-          <a *ngIf="!isLogged" routerLink="/login">Login</a>
-          <a *ngIf="!isLogged" routerLink="/register">Register</a>
-          <a *ngIf="isLogged" routerLink="/admin/apartments/create">Add Apartments</a>
-          <a *ngIf="isLogged" routerLink="/admin/apartments">My Apartments</a>
-          <a *ngIf="isLogged" (click)="getOutSession()" role="button">Logout</a>
-        </ul>
+          mat-flat-button
+          [matMenuTriggerFor]="appMenu"
+          role="button">
+          <strong class="defaul-color account_name">{{accountName}} <i class="fas fa-angle-down"></i></strong>
+        </a>
+
+        <mat-menu #appMenu xPosition="after" yPosition="above">
+            <button mat-menu-item *ngIf="!isLogged" routerLink="/login">Login</button>
+            <button mat-menu-item *ngIf="!isLogged" routerLink="/register">Register</button>
+            <button mat-menu-item *ngIf="isLogged" routerLink="/admin/apartments/create">Add Apartments</button>
+            <button mat-menu-item *ngIf="isLogged" routerLink="/admin/apartments">My Apartments</button>
+            <button mat-menu-item *ngIf="isLogged" (click)="getOutSession()" role="button">Logout</button>
+        </mat-menu>
       </li>
     </ul>
   </nav>
-</nav>
+</mat-toolbar>
